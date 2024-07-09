@@ -47,6 +47,6 @@ public class RU_operation {
             else {
                 return "The index values that you choose,That have amount greater than 10,000";
             }
-        return "update operation is successfully";
+        return "update operation is success";
     }
 }
