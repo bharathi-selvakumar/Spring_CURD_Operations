@@ -14,12 +14,12 @@ public class REST_E_KART {
 
     @PostConstruct
     public void data(){
-        list.add(new E_kart(420,"bharathi","mobile","EMP",6374461714L,15000,"transist","jack"));
-        list.add(new E_kart(560,"barani","laptop","singipuram",9242424234L,40000,"transist","jack"));
-        list.add(new E_kart(520,"anandh","graphic card","dharmapuri",6347443414L,9100,"transist","jon "));
-        list.add(new E_kart(450,"aadhi","mobile","dharmapuri",944234744L,20000,"transist","jon "));
-        list.add(new E_kart(440,"aasha","dress","belur",9984446176L,599,"transist","jack"));
-        list.add(new E_kart(507,"lokesh","tab","krishnagiri",7823461714L,17999,"transist","steve"));
+        list.add(new E_kart(420,"bharathi","mobile","EMP",6374461714L,15000,"transit","jack"));
+        list.add(new E_kart(560,"barani","laptop","singipuram",9242424234L,40000,"transit","jack"));
+        list.add(new E_kart(520,"anandh","graphic card","dharmapuri",6347443414L,9100,"transit","jon "));
+        list.add(new E_kart(450,"aadhi","mobile","dharmapuri",944234744L,20000,"transit","jon "));
+        list.add(new E_kart(440,"aasha","dress","belur",9984446176L,599,"transit","jack"));
+        list.add(new E_kart(507,"lokesh","tab","krishnagiri",7823461714L,17999,"transit","steve"));
     }
 
 
