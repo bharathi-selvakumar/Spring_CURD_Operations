@@ -9,7 +9,6 @@ import java.util.Arrays;
 
 @RestController
 public class RU_operation {
-
      int[] balance = {10_000, 8000, 9000, 5000, 4000, 7000, 3000, 6000, 2000, 2000};
     @GetMapping("/balance")
     public int[] all_coustomer_balance() {
@@ -34,7 +33,6 @@ public class RU_operation {
                     System.out.println(cal);
                     balance[position] = balance[position] - (int) cal;
                     System.out.println("the position " + position + " is updated,where it have the amount of below 10000 " + "[" + balance[position] + "]");
-                } else if (balance[position] < 5000 && balance[position] >= 1000) {
                     System.out.println("Bank balance :" + Arrays.toString(balance));
                     float persentage = (float) 5 / 100;
                     System.out.println(persentage);
@@ -42,7 +40,6 @@ public class RU_operation {
                     System.out.println(cal);
                     balance[position] = balance[position] - (int) cal;
                     System.out.println("the position " + position + " is updated is updated,where it have the amount of below 5000 :" + "[" + balance[position] + "]");
-                } else {
                     return "The index values that you choose,That have amount greater than 10,000 ";
                 }
         return "update operation is success";
