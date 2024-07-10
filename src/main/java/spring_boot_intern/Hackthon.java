@@ -36,15 +36,10 @@ public class Hackthon {
         return "The "+new_name+" is Add in list";
     }
 
-    @PutMapping("/put/{name}/{index}")
-    public String put_name(@PathVariable("name") String name, @PathVariable("index") int index,@RequestBody String update_name){
-          if(name.contains(update_name)){
-              return "The you choose that not in the list";
-            }
-            else {
-              Participant_name.add(index,update_name);
-              return "The name "+name+" is updated in ";
-            }
+    @PutMapping("/put/{index}")
+    public String put_name(@PathVariable("index") int index,@RequestBody String update_name){
+              Participant_name.set(index,update_name);
+              return "The name "+update_name+" is updated in ";
     }
 
     @DeleteMapping("/delete/{name}")
