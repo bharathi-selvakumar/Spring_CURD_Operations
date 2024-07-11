@@ -1,6 +1,7 @@
 package Task;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,12 +15,12 @@ public class REST_E_KART {
 
     @PostConstruct
     public void data(){
-        list.add(new E_kart(420,"bharathi","mobile","EMP",6374461714L,15000,"transist","jack"));
-        list.add(new E_kart(560,"barani","laptop","singipuram",9242424234L,40000,"transist","jack"));
-        list.add(new E_kart(520,"anandh","graphic card","dharmapuri",6347443414L,9100,"transist","jon "));
-        list.add(new E_kart(450,"aadhi","mobile","dharmapuri",944234744L,20000,"transist","jon "));
-        list.add(new E_kart(440,"aasha","dress","belur",9984446176L,599,"transist","jack"));
-        list.add(new E_kart(507,"lokesh","tab","krishnagiri",7823461714L,17999,"transist","steve"));
+        list.add(new E_kart(420,"bharathi","mobile","EMP",6374461714L,15000,"transit","jack"));
+        list.add(new E_kart(560,"barani","laptop","singipuram",9242424234L,40000,"transit","jack"));
+        list.add(new E_kart(520,"anandh","graphic card","dharmapuri",6347443414L,9100,"transit","jon "));
+        list.add(new E_kart(450,"aadhi","mobile","dharmapuri",944234744L,20000,"transit","jon "));
+        list.add(new E_kart(440,"aasha","dress","belur",9984446176L,599,"transit","jack"));
+        list.add(new E_kart(507,"lokesh","tab","krishnagiri",7823461714L,17999,"transit","steve"));
     }
 
 
@@ -56,15 +57,34 @@ public class REST_E_KART {
     @GetMapping("/get/{executive}")
     public List<E_kart> executive(@PathVariable("executive") String executive) {
         List<E_kart> list_E = list.stream().filter(list -> list.getExecutiveName().equalsIgnoreCase(executive)).collect(Collectors.toList());
-        return list_E;
+       if(list_E.isEmpty()){
+            return null;
+       }
+       else {
+            return list_E;
+       }
 }
     @GetMapping("/get/address/{address}")
     public List<E_kart>  address(@PathVariable("address") String address){
-        return list.stream().filter(list -> list.getReceiverAddress().equalsIgnoreCase(address)).collect(Collectors.toList());
+        List<E_kart> match_address= list.stream().filter(list -> list.getReceiverAddress().equalsIgnoreCase(address)).collect(Collectors.toList());
+
+        if (list.isEmpty()){
+            return null;
+        }
+        else {
+            return match_address;
+        }
     }
 
     @GetMapping("/get/rec/{receiver}")
     public List<E_kart>  receiver(@PathVariable("receiver") String receiver){
-        return list.stream().filter(list -> list.getReceiverName().equalsIgnoreCase(receiver)).collect(Collectors.toList());
+        List<E_kart> reciv=list.stream().filter(list -> list.getReceiverName().equalsIgnoreCase(receiver)).collect(Collectors.toList());
+
+        if (list.isEmpty()){
+            return null;
+        }
+        else {
+            return reciv;
+        }
     }
 }
