@@ -33,6 +33,7 @@ public class RU_operation {
                     System.out.println(cal_);
                     balance[position] = balance[position] - (int) cal_;
                     System.out.println("the position " + position + " is updated,where it have the amount of below 10000 " + "[" + balance[position] + "]");
+                } else if(balance[position] < 5000 && balance[position] >= 1000) {
                     System.out.println("Bank balance :" + Arrays.toString(balance));
                     float persentage_2 = (float) 5 / 100;
                     System.out.println(persentage_2);
@@ -40,8 +41,11 @@ public class RU_operation {
                     System.out.println(cal_new);
                     balance[position] = balance[position] - (int) cal_new;
                     System.out.println("the position " + position + " is updated is updated,where it have the amount of below 5000 :" + "[" + balance[position] + "]");
+                }
+                else {
                     return "The index values that you choose,That have amount greater than 10,000 ";
                 }
+
         return "update operation is success";
     }
 }
