@@ -1,11 +1,15 @@
 package spring_boot_intern;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"Task","spring_boot_intern"})
+@ComponentScan(basePackages = {"DataBaseConnectivity","Task"})
+@EntityScan("DataBaseConnectivity")
+@EnableJpaRepositories(basePackages = "DataBaseConnectivity")
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
