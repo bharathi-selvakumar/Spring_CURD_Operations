@@ -24,7 +24,7 @@ public class EkartServices {
     }
 
     public List<Ekart_Entity> get_receiver(String receiver){
-        return jpa.findAllBydAddress(receiver);
+        return jpa.findAllByreceiver(receiver);
     }
 
 

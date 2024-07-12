@@ -32,6 +32,8 @@ public class MappingController_Ekart {
     public List<Ekart_Entity> getreceiver(@PathVariable("/receiver") String receiver){
         return services.get_receiver(receiver);
     }
+
+
 }
 
 
