@@ -1,7 +1,5 @@
 package DataBaseConnectivity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.EnableMBeanExport;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,7 +7,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/database")
 public class MappingController_Ekart {
-
     @Autowired
     EkartServices services;
 
@@ -33,7 +30,10 @@ public class MappingController_Ekart {
         return services.get_receiver(receiver);
     }
 
-
+    @GetMapping("/exe/{exeid}")
+    public List<Ekart_Entity> getexe(@PathVariable("exeid") int exeid){
+        return services.get_exe(exeid);
+    }
 }
 
 

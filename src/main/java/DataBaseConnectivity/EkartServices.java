@@ -20,12 +20,18 @@ public class EkartServices {
     }
 
     public List<Ekart_Entity> get_address(String address){
-        return jpa.findAllBydAddress(address);
+        return jpa.findAllByReceiverAddress(address);
     }
 
     public List<Ekart_Entity> get_receiver(String receiver){
-        return jpa.findAllByreceiver(receiver);
+        return jpa.findAllByReceiverName(receiver);
     }
+
+    public List<Ekart_Entity> get_exe(int exeid){
+        return jpa.findAllByExecutiveID(exeid);
+    }
+
+
 
 
 }

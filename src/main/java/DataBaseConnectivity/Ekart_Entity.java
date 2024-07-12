@@ -23,4 +23,5 @@ public class Ekart_Entity {
     private int itemPrice;
     private  String itemStatus;
     private  String  executiveName;
+    private int executiveID;
 }
